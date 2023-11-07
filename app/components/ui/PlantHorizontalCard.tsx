@@ -20,7 +20,7 @@ const PlantHorizontalCard: FC<PlantHorizontalCardProps> = ({
   price,
 }) => {
   return (
-    <Pressable style={styles.button}>
+    <View style={styles.container}>
       <Image source={require("../../assets/plant.jpg")} style={styles.image} />
       <View style={styles.info}>
         <View style={styles.infoText}>
@@ -29,12 +29,12 @@ const PlantHorizontalCard: FC<PlantHorizontalCardProps> = ({
         </View>
         <Text style={styles.price}>${price.toString()}</Text>
       </View>
-    </Pressable>
+    </View>
   );
 };
 
 const styles = StyleSheet.create({
-  button: {
+  container: {
     backgroundColor: "#F6F7FB",
     flexDirection: "row",
     borderRadius: 16,

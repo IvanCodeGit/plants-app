@@ -25,9 +25,7 @@ const PlantCard: FC<PlantCardProps> = ({ title, price }) => {
           <Text style={styles.title}>{title}</Text>
           <Text style={styles.price}>${price.toString()}</Text>
         </View>
-        <Pressable>
-          <Ionicons name="chevron-forward" color="white" />
-        </Pressable>
+        <Ionicons name="chevron-forward" color="white" />
       </View>
     </ImageBackground>
   );

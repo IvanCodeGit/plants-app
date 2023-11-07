@@ -14,8 +14,16 @@ import { plants, plantsHorizontal } from "../../data/data";
 import SelectItem from "../ui/SelectItem";
 import PlantHorizontalCard from "../ui/PlantHorizontalCard";
 
-const Home: FC = () => {
+interface HomeProps {
+  navigation: any;
+}
+
+const Home: FC<HomeProps> = ({ navigation }) => {
   const [search, setSearch] = useState("");
+
+  const navigateToDetails = () => {
+    navigation.navigate("Details");
+  };
 
   return (
     <View>
@@ -39,19 +47,20 @@ const Home: FC = () => {
             {plants.map(
               (item: { title: string; price: number }, idx: number) => {
                 return (
-                  <View
+                  <Pressable
                     style={
                       idx != plants.length - 1
                         ? styles.plantsCardContainer
                         : undefined
                     }
+                    onPress={navigateToDetails}
                   >
                     <PlantCard
                       key={idx}
                       title={item.title}
                       price={item.price}
                     />
-                  </View>
+                  </Pressable>
                 );
               }
             )}
@@ -77,12 +86,13 @@ const Home: FC = () => {
                 idx: number
               ) => {
                 return (
-                  <View
+                  <Pressable
                     style={
                       idx != plantsHorizontal.length - 1
                         ? styles.plantHorizontalCardContainer
                         : undefined
                     }
+                    onPress={navigateToDetails}
                   >
                     <PlantHorizontalCard
                       key={idx}
@@ -90,7 +100,7 @@ const Home: FC = () => {
                       type={item.type}
                       price={item.price}
                     />
-                  </View>
+                  </Pressable>
                 );
               }
             )}
