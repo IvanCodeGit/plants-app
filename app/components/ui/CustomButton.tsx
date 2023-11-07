@@ -4,12 +4,14 @@ import { Pressable, Text, StyleSheet } from "react-native";
 interface CustomButtonProps {
   title: String;
   type: "Filled" | "Outlined";
+  action: () => void;
 }
 
-const CustomButton: FC<CustomButtonProps> = ({ title, type }) => {
+const CustomButton: FC<CustomButtonProps> = ({ title, type, action }) => {
   return (
     <Pressable
       style={type === "Filled" ? styles.buttonFilled : styles.buttonOutlined}
+      onPress={action}
     >
       <Text style={styles.title}>{title}</Text>
     </Pressable>

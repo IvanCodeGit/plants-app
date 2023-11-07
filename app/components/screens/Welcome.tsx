@@ -9,7 +9,15 @@ import {
 } from "react-native";
 import CustomButton from "../ui/CustomButton";
 
-const Welcome: FC = () => {
+interface WelcomeProps {
+  navigation: any;
+}
+
+const Welcome: FC<WelcomeProps> = ({ navigation }) => {
+  const navigateToHome = () => {
+    navigation.navigate("Home");
+  };
+
   return (
     <View>
       <ImageBackground
@@ -22,8 +30,16 @@ const Welcome: FC = () => {
               {"Buy Your Favorite\nPlants, Only Here"}
             </Text>
             <View style={styles.buttons}>
-              <CustomButton title="Log In" type="Filled" />
-              <CustomButton title="Sign Up" type="Outlined" />
+              <CustomButton
+                title="Log In"
+                type="Filled"
+                action={navigateToHome}
+              />
+              <CustomButton
+                title="Sign Up"
+                type="Outlined"
+                action={navigateToHome}
+              />
             </View>
           </View>
         </SafeAreaView>
