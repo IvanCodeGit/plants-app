@@ -48,6 +48,7 @@ const Home: FC<HomeProps> = ({ navigation }) => {
               (item: { title: string; price: number }, idx: number) => {
                 return (
                   <Pressable
+                    key={idx}
                     style={
                       idx != plants.length - 1
                         ? styles.plantsCardContainer
@@ -55,11 +56,7 @@ const Home: FC<HomeProps> = ({ navigation }) => {
                     }
                     onPress={navigateToDetails}
                   >
-                    <PlantCard
-                      key={idx}
-                      title={item.title}
-                      price={item.price}
-                    />
+                    <PlantCard title={item.title} price={item.price} />
                   </Pressable>
                 );
               }
@@ -87,6 +84,7 @@ const Home: FC<HomeProps> = ({ navigation }) => {
               ) => {
                 return (
                   <Pressable
+                    key={idx}
                     style={
                       idx != plantsHorizontal.length - 1
                         ? styles.plantHorizontalCardContainer
@@ -95,7 +93,6 @@ const Home: FC<HomeProps> = ({ navigation }) => {
                     onPress={navigateToDetails}
                   >
                     <PlantHorizontalCard
-                      key={idx}
                       title={item.title}
                       type={item.type}
                       price={item.price}
