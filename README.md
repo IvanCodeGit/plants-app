@@ -1,3 +1,3 @@
-![Welcome](Welcome.png)
-![Home](Home.png)
-![Details](Details.png)
+![Welcome](Welcome.png | height=900)
+![Home](Home.png | height=900)
+![Details](Details.png | height=900)
