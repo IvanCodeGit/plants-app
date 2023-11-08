@@ -1,3 +1,3 @@
-![Welcome](Welcome.png | height=900)
-![Home](Home.png | height=900)
-![Details](Details.png | height=900)
+<img src="Welcome.png" height=900>
+<img src="Home.png" height=900>
+<img src="Details.png" height=900>
